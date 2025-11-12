@@ -1,1 +1,1 @@
-I am gonna add normal description soon.
+This is first version web-application for "fast"(now it is wrong) parsing data with logstash. I don't know how correctly call this, but i have decided - LodsParser I am going to do this web-application better than now. But it is my own project for a free time and i don't know as soon.
