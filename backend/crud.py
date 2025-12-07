@@ -1,6 +1,6 @@
 import subprocess
 from datetime import datetime
-from os_exe import get_ls_pid
+from os_exe import sighup
 
 def create_input(data):
 	timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -15,7 +15,6 @@ def read_output():
 	return data
 
 def update_filter(data):
-	PID = str(get_ls_pid())
 	LS_CONF = '/app/logstash/config/conf.d/logsparser.conf'
 	CONFIG = f'''
 input {{
@@ -44,4 +43,4 @@ output {{
 '''
 	with open(LS_CONF, 'w') as f:
 		f.write(CONFIG)
-	subprocess.call(["kill","-1",PID])
+	sighup()

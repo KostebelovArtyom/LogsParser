@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from crud import update_filter, create_input, read_output
+import time
 
 app = Flask(__name__,
         template_folder='/app/LogsParser/frontend-Shaitan',
@@ -22,4 +23,4 @@ def result_page() -> 'html':
             result=result_data,)
 
 if __name__ == "__main__":
-    app.run(host="192.168.1.10")
+    app.run(host="192.168.1.8")
